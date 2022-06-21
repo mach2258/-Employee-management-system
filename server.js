@@ -1,6 +1,9 @@
 const express = require('express');
 const mysql = require('mysql2');
-var inquirer = require('inquirer');
+const dotenv = require('dotenv')
+require('dotenv').config();
+// const inquirer = require('inquirer');
+const inquirer = require("fix-esm").require("inquirer")
 const PORT = process.env.PORT || 8080;
 const app = express()
 
@@ -9,9 +12,9 @@ app.use(express.json());
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: DB_USER,
-    password: DB_PW,
-    database: DB_NAME
+    user: process.env.DB_USER,
+    password: process.env.DB_PW,
+    database: process.env.DB_NAME
     },
         console.log(`Connected to the database.`)
 )
