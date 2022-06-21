@@ -1,9 +1,12 @@
-const express = require('express');
-const mysql = require('mysql2');
-const dotenv = require('dotenv')
-require('dotenv').config();
-// const inquirer = require('inquirer');
-const inquirer = require("fix-esm").require("inquirer")
+
+// const express = require('express');
+import express from 'express';
+// const mysql = require('mysql2');
+import mysql from 'mysql2'
+// require('dotenv').config();
+import dotenv from 'dotenv'
+// const inquirer = require("inquirer");
+import inquirer from 'inquirer';
 const PORT = process.env.PORT || 8080;
 const app = express()
 
@@ -136,3 +139,5 @@ const convertRoleToId = (role) => {
         })
     })
 }
+
+start()
